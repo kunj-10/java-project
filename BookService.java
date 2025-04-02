@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 class BookServiceException extends Exception {
@@ -14,6 +15,8 @@ class BookService {
 
     public BookService(CSVDatabase db) {
         this.db = db;
+        List<String[]> allBooks = db.executeQuery();
+        bookId = allBooks.size();
     }
 
     public void addBook() {
